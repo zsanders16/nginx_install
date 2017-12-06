@@ -1,7 +1,19 @@
 #! /bin/bash
 
+# ensuring you are getting the newest version
 sudo apt-get update
-sudo apt-get --assume-yes upgrade
 
+
+# installing Nginx
 sudo apt-get --assume-yes install nginx
+
+# removing default welcome configuration
+sudo rm -rf /etc/nginx/sites-enabled/default
+
+
+sudo mkdir /etc/nginx/html
+
+sudo cp virtual_servers.conf /etc/nginx/html
+sudo cp index.html /etc/nginx/html
+sudo cp 404.html /etc/nginx/html
 
