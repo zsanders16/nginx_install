@@ -3,17 +3,23 @@
 # ensuring you are getting the newest version
 sudo apt-get update
 
-
 # installing Nginx
 sudo apt-get --assume-yes install nginx
 
-# removing default welcome configuration
+# allow traffic to Nginx
+sudo ufw allow 'Nginx HTTP'
+sudo ufw enable
+
+# removing default welcome configuration and and new config file
 sudo rm -rf /etc/nginx/sites-enabled/default
+sudo cp virtual_servers.conf /etc/nginx/conf.d
 
-
+# add html pages
 sudo mkdir /etc/nginx/html
-
-sudo cp virtual_servers.conf /etc/nginx/html
 sudo cp index.html /etc/nginx/html
 sudo cp 404.html /etc/nginx/html
+
+#restart nginx
+sudo systemctl stop nginx
+sudo systemctl start nginx
 
