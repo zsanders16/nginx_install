@@ -20,6 +20,5 @@ sudo cp index.html /etc/nginx/html
 sudo cp 404.html /etc/nginx/html
 
 #restart nginx
-sudo systemctl stop nginx
-sudo systemctl start nginx
+sudo systemctl restart nginx
 
