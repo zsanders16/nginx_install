@@ -10,7 +10,7 @@ sudo apt-get --assume-yes install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo ufw enable
 
-# removing default welcome configuration and and new config file
+# removing default welcome configuration and add new servers to conf.d file
 sudo rm -rf /etc/nginx/sites-enabled/default
 sudo cp virtual_servers.conf /etc/nginx/conf.d
 
